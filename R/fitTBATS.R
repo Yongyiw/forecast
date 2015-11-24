@@ -258,6 +258,8 @@ fitSpecificTBATS <- function(y, use.box.cox, use.beta, use.damping, seasonal.per
 		#Un-transform the seed states
 		assign("x.nought.untransformed", InvBoxCox(x.nought, lambda=lambda), envir=opt.env)
 		#Optimise the likelihood function
+		print("Namaste!")
+		print(param.vector)
 		optim.like <- optim(par=param.vector$vect, fn=calcLikelihoodTBATS, method="Nelder-Mead", 
 			opt.env=opt.env, use.beta=use.beta, use.small.phi=use.damping, 
 			seasonal.periods=seasonal.periods, param.control=param.vector$control, 
